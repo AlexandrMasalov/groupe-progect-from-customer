@@ -1,36 +1,14 @@
 const router = require('express').Router();
 
 
+router.get('/', (req, res) => {
+  res.redirect('/login');
+});
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-// router.get('/', (req, res) => {
-//   res.render('registrate');
-// })
-
-//Клиенты-
 router.get('/client', (req, res) => {
   res.render('client');
-})
+});
 router.post('/client', async (req, res) => {
   // await console.log(req.body);
   const {firstname, lastname, middlename, address,phone} = req.body
@@ -44,17 +22,15 @@ router.post('/client', async (req, res) => {
 });
 
 
-
 //Заказы
 router.get('/edit', (req, res) => {
   res.render('edit');
-})
+});
 router.post('/edit', async (req, res) => {
   // await console.log(req.body);
   const {orderNumber, furniture, cost, delivery, builddate, deliveryteam, buildteam, clientPhone, address, comment} = req.body
   //находим нужного пользователя по номеру
-  const checkUser = await User.findOne({where :{email}})
-  
+  const checkUser = await User.findOne({where :{email}}) 
 
   //создаем комментарий к заказу
   const newComment = await Comment.create({
@@ -102,12 +78,4 @@ router.post('/edit', async (req, res) => {
 });
 
 
-
-
-
-
-
 module.exports = router;
-
-
-//клиент 
