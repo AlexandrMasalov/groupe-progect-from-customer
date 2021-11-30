@@ -18,7 +18,6 @@ module.exports = (sequelize, DataTypes) => {
   Assembly.init({
     data: DataTypes.STRING,
     groupAssembly_id: DataTypes.INTEGER,
-    statusAssembly: DataTypes.INTEGER
   }, {
     sequelize,
     modelName: 'Assembly',

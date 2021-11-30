@@ -17,15 +17,12 @@ module.exports = {
           key: 'id',
         },
       },
-      statusDelivery: {
-        type: Sequelize.STRING,
-      },
       createdAt: {
-        allowNull: false,
+        // allowNull: false,
         type: Sequelize.DATE,
       },
       updatedAt: {
-        allowNull: false,
+        // allowNull: false,
         type: Sequelize.DATE,
       },
     });
