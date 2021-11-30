@@ -1,31 +1,31 @@
-
+<h3 class="text-center">Создать заказ</h2>
 <form method="POST" action="/edit" class="col-6 m-auto">
   <div class="mb-3">
     <label for="orderNumber" class="form-label">Номер заказа</label>
     <input name="orderNumber" type="text " class="form-control" id="orderNumber">
     <div id="userNameHelp" class="form-text"></div>
   </div>
-    <div class="mb-3">
+  <div class="mb-3">
     <label for="furniture" class="form-label">Тип мебели</label>
     <input name="furniture" type="text " class="form-control" id="furniture">
     <div id="userLastNameHelp" class="form-text"></div>
   </div>
-    <div class="mb-3">
+  <div class="mb-3">
     <label for="cost" class="form-label">Стоимость мебели</label>
     <input name="cost" type="text " class="form-control" id="cost">
     <div id="userLastNameHelp" class="form-text"></div>
   </div>
-    <div class="mb-3">
+  <div class="mb-3">
     <label for="delivery" class="form-label">Дата доставки</label>
     <input name="delivery" type="text " class="form-control" id="delivery">
     <div id="userLastNameHelp" class="form-text"></div>
   </div>
-    <div class="mb-3">
+  <div class="mb-3">
     <label for="builddate" class="form-label">Дата сборки</label>
     <input name="builddate" type="text " class="form-control" id="builddate">
     <div id="userLastNameHelp" class="form-text"></div>
   </div>
-  <br>
+  <div>
     <select name="deliveryteam" class="form-select" id="floatingSelect" aria-label="Floating label select example">
       <option >Выберите бригаду доставки</option>
       <option value="1">Бригада 1</option>
@@ -34,8 +34,7 @@
     </select>
     <label for="floatingSelect"></label>
   </div>
-  
-    </div> 
+  <div>
     <select name="buildteam" class="form-select" id="floatingSelect" aria-label="Floating label select example">
       <option >Выберите бригаду сборки</option>
       <option value="1">Бригада 1</option>
@@ -44,20 +43,20 @@
     </select>
     <label for="floatingSelect"></label>
   </div>
-      <div class="mb-3">
+  <div class="mb-3">
     <label for="clientPhone" class="form-label">Введите номер телефона клиента</label>
     <input name="clientPhone" type="text " class="form-control" id="clientPhone">
     <div id="helpclientPhone" class="form-text"></div>
   </div>
-    <div class="form-floating">
-  <textarea name="comment" class="form-control" placeholder="Leave a comment here" id="comment"></textarea>
-  <label for="comment">Комментарии клиента</label>
-  <br>
-</div>
-    <div class="mb-3">
+  <div class="form-floating">
+    <textarea name="comment" class="form-control" placeholder="Leave a comment here" id="comment"></textarea>
+    <label for="comment">Комментарии клиента</label>
+  </div>
+  <div class="mb-3">
     <label for="author" class="form-label">Введите Ваше имя</label>
     <input name="author" type="text " class="form-control" id="author">
     <div id="helpauthor" class="form-text"></div>
   </div>
+
   <button type="submit" class="btn btn-primary">Создать заявку</button>
 </form>

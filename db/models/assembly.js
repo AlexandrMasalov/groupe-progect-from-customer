@@ -11,7 +11,7 @@ module.exports = (sequelize, DataTypes) => {
      */
     static associate(models) {
       this.belongsTo(models.Order, { foreinkey: 'assembly_id'}),
-      this.hasOne(models.GroupeAssembly, { foreinkey: 'groupeAssembly_id'})
+      this.hasOne(models.GroupAssembly, { foreinkey: 'groupeAssembly_id'})
 
     }
   };

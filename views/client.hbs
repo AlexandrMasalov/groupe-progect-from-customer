@@ -1,29 +1,30 @@
- 
- <form method="POST" action="/client" class="col-6 m-auto"></form>
- </div>
-    <div class="mb-3">
+<h3 class="text-center">Создать клиента</h3>
+ <form method="POST" action="/client" class="col-6 m-auto mb-5">
+  <div class="mb-3">
     <label for="lastname" class="form-label">Введите фамилию клиента</label>
     <input name="lastname" type="text " class="form-control" id="lastname">
     <div id="userLastNameHelp" class="form-text"></div>
   </div>
-    <div class="mb-3">
+  <div class="mb-3">
     <label for="firstname" class="form-label">Введите имя клиента</label>
     <input name="firstname" type="text " class="form-control" id="firstname">
     <div id="userfirstNameHelp" class="form-text"></div>
   </div>
-    <div class="mb-3">
+  <div class="mb-3">
     <label for="middlename" class="form-label">Введите отчество клиента</label>
     <input name="middlename" type="text " class="form-control" id="middlename">
     <div id="usermiddletNameHelp" class="form-text"></div>
   </div>
-    <div class="mb-3">
+  <div class="mb-3">
     <label for="address" class="form-label">Введите адрес клиента</label>
     <input name="address" type="text " class="form-control" id="address">
     <div id="useraddress" class="form-text"></div>
   </div>
-      <div class="mb-3">
+  <div class="mb-3">
     <label for="phone" class="form-label">Введите номер телефона клиента</label>
     <input name="phone" type="text " class="form-control" id="phone">
     <div id="userphone" class="form-text"></div>
   </div>
-  </form>
+  <button type="submit" class="btn btn-primary">Создать клиента</button>
+ </form>
+
