@@ -1,0 +1,37 @@
+
+<form method="POST" action="/" class="col-6 m-auto">
+  <div class="mb-3">
+    <label for="user-name" class="form-label">Имя</label>
+    <input type="text " class="form-control" id="user-name">
+    <div id="userNameHelp" class="form-text">Введите Ваше имя</div>
+  </div>
+    <div class="mb-3">
+    <label for="user-lastname" class="form-label">Фамилия</label>
+    <input type="text " class="form-control" id="user-lastname">
+    <div id="userLastNameHelp" class="form-text">Введите Вашу фамилию</div>
+  </div>
+    <div class="mb-3">
+    <label for="inputEmail" class="form-label">Электронная почта</label>
+    <input type="email" class="form-control" id="inputEmail" aria-describedby="emailHelp">
+    <div id="emailHelp" class="form-text">Электронная почта должна быть уникальной</div>
+  </div>
+  <div class="mb-3">
+    <label for="inputPassword" class="form-label">Введите пароль</label>
+    <input type="password" class="form-control" id="inputPassword">
+    <div id="passwordHelp" class="form-text">Введите пароль</div>
+  </div>
+  <div class="mb-3 form-floating">
+    <select class="form-select" id="floatingSelect" aria-label="Floating label select example">
+      <option selected>Выберите отдел</option>
+      <option value="1">Бригада сборки</option>
+      <option value="2">Бригада доставки</option>
+      <option selected value="3">Администратор</option>
+    </select>
+    <label for="floatingSelect">Выберите отдел</label>
+  </div>
+  <div class="mb-3 form-check">
+    <input type="checkbox" class="form-check-input" id="exampleCheck1">
+    <label class="form-check-label" for="exampleCheck1">Запомнить пароль</label>
+  </div>
+  <button type="submit" class="btn btn-primary">Submit</button>
+</form>
