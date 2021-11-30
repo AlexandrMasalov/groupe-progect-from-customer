@@ -7,6 +7,18 @@ npx sequelize-cli model:generate --name GroupDelivery --attributes data:string,u
 npx sequelize-cli model:generate --name GroupAssembly --attributes data:string,user_id:string
 npx sequelize-cli model:generate --name User --attributes name:string,password:string
 npx sequelize-cli model:generate --name Furniture --attributes type:string,price:string
+npx sequelize-cli model:generate --name Status --attributes type:string
+
+
+npx sequelize-cli seed:generate --name User
+npx sequelize-cli seed:generate --name Furniture
+npx sequelize-cli seed:generate --name Client
+npx sequelize-cli seed:generate --name Status
 
 
 
+
+
+
+
+npx sequelize-cli db:seed:all

@@ -14,7 +14,8 @@ module.exports = (sequelize, DataTypes) => {
       this.hasOne(models.Furniture, { foreinkey: 'furniture_id'}),
       this.hasOne(models.Assembly, { foreinkey: 'assembly_id'})
       this.hasOne(models.Delivery, { foreinkey: 'delivery_id'}),
-      this.belongsTo(models.Client, { foreinkey: 'client_id'})
+      this.belongsTo(models.Client, { foreinkey: 'client_id'}),
+      this.hasOne(models.Status, { foreinkey: 'status_id'})
       
     }
   };
@@ -24,6 +25,7 @@ module.exports = (sequelize, DataTypes) => {
     client_id: DataTypes.INTEGER,
     delivery_id: DataTypes.INTEGER,
     assembly_id: DataTypes.INTEGER,
+    status_id: DataTypes.INTEGER,
   }, {
     sequelize,
     modelName: 'Order',
