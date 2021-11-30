@@ -10,6 +10,7 @@ const bcrypt = require('bcrypt')
 const app = express();
 
 const sessionConfig = {
+  store: new FileStore(),
   name: 'sid',                                  // Имя куки для хранения id сессии. По умолчанию - connect.sid
   secret: `${process.env.SESSION_SECRET}`,      // секретное слово для шифрование, может быть любым
   resave: false,                                // Пересохранять ли куку при каждом запросе
@@ -21,8 +22,9 @@ const sessionConfig = {
   
   const mainRouter = require('./routes/main');
   const loginRouter = require('./routes/login');
+  const logoutRouter = require('./routes/logout');
   const ordersRouter = require('./routes/orders');
-  
+
   app.set('views', path.join(__dirname, 'views'));
   app.set('view engine', 'hbs');
   
@@ -38,8 +40,10 @@ const sessionConfig = {
     next();
   });
 
-app.use('/', mainRouter); //ссылка на роуты
-app.use('/login', loginRouter); 
-app.use('/orders', ordersRouter); 
+
+  app.use('/', mainRouter); //ссылка на роуты
+  app.use('/login', loginRouter); 
+  app.use('/logout', logoutRouter);
+  app.use('/orders', ordersRouter); 
 
 module.exports = app;
