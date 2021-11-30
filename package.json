@@ -4,7 +4,9 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "node server",
+    "dev": "nodemon server"
   },
   "repository": {
     "type": "git",
@@ -16,5 +18,20 @@
   "bugs": {
     "url": "https://github.com/mslsash/groupe-progect-from-customer/issues"
   },
-  "homepage": "https://github.com/mslsash/groupe-progect-from-customer#readme"
+  "homepage": "https://github.com/mslsash/groupe-progect-from-customer#readme",
+  "dependencies": {
+    "cookie-parser": "^1.4.6",
+    "express": "^4.17.1",
+    "express-session": "^1.17.2",
+    "hbs": "^4.2.0",
+    "morgan": "^1.10.0",
+    "pg": "^8.7.1",
+    "pg-hstore": "^2.3.4",
+    "sequelize": "^6.12.0-alpha.1",
+    "session-file-store": "^1.5.0"
+  },
+  "devDependencies": {
+    "nodemon": "^2.0.15",
+    "sequelize-cli": "^6.3.0"
+  }
 }
