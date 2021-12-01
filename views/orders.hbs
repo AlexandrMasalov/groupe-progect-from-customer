@@ -9,44 +9,23 @@
       <th scope="col">#Заказ</th>
       <th scope="col">Дата</th>
       <th scope="col">Статус заказа</th>
-      <th scope="col">Тип мебели</th>
-      <th scope="col">Стоимость</th>
+      <th scope="col">Сумма</th>
       <th scope="col">Заказчик</th>
       <th scope="col">Комментарий</th>
     </tr>
   </thead>
   <tbody>
-    {{#if data}}
-      {{#each data}}
-      <tr>
-        <th scope="row">{{this}}</th>
-        <td>{{this}}</td>
-        <td>{{this}}</td>
-        <td>{{this}}</td>
-        <td>{{this}}</td>
-        <td>{{this}}</td>
-        <td>{{this}}</td>
-      </tr>
-      {{/each}}
-    {{else}} 
-      <tr class="p-2">
-        <th scope="row">1</th>
-        <td>25 Ноя</td>
-        <td>На сборке</td>
-        <td>Стол</td>
-        <td>2 000</td>
-        <td>Иванов</td>
-        <td>Предупредить перед отправкой</td>
-      </tr>
-      <tr class="p-2">
-        <th scope="row">2</th>
-        <td>25 Ноя</td>
-        <td>На сборке</td>
-        <td>Стол</td>
-        <td>2 000</td>
-        <td>Иванов</td>
-        <td>Предупредить перед отправкой</td>
-      </tr>
+    {{#if orders}}
+    {{#each orders}}
+    <tr>
+      <th scope="row">{{this}}</th>
+      <td>{{this}}</td>
+      <td>{{this}}</td>
+      <td>{{this}}</td>
+      <td>{{this}}</td>
+      <td>{{this}}</td>
+    </tr>
+    {{/each}}
     {{/if}}
   </tbody>
 </table>
