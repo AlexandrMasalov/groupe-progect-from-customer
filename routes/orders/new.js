@@ -7,6 +7,7 @@ const {
 router.get('/', (req, res) => {
   res.render('orders/new');
 });
+
 router.post('/', async (req, res) => {
   const {
     orderNumber, furniture, cost, delivery, builddate, deliveryteam, buildteam, clientPhone, comment, author,

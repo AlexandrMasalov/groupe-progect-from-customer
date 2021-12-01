@@ -48,7 +48,7 @@ app.use('/', mainRouter); // ссылка на роуты
 app.use('/login', loginRouter);
 app.use('/logout', logoutRouter);
 app.use('/orders', ordersRouter);
-app.use('/orders', newOrderRouter);
+app.use('/orders/new', newOrderRouter);
 app.use('/clients', clientsRouter);
 app.use('/clients/new', newClientRouter);
 app.use('/furniture', furnitureRouter);
