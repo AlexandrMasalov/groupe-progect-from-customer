@@ -1,26 +1,26 @@
 <h3 class="text-center">Создать заказ</h2>
-<form method="POST" action="/edit" class="col-6 m-auto">
-  <div class="mb-3">
-    <label for="orderNumber" class="form-label">Номер заказа</label>
+<form method="POST" action="/orders/new" class="col-6 m-auto">
+  <div class="form-floating mb-3">
     <input name="orderNumber" type="text " class="form-control" id="orderNumber">
+    <label for="orderNumber" class="form-label">Номер заказа</label>
     <div id="userNameHelp" class="form-text"></div>
   </div>
-  <div class="mb-3">
-    <label for="furniture" class="form-label">Тип мебели</label>
+  <div class="form-floating mb-3">
     <input name="furniture" type="text " class="form-control" id="furniture">
+    <label for="furniture" class="form-label">Тип мебели</label>
     <div id="userLastNameHelp" class="form-text"></div>
   </div>
-  <div class="mb-3">
+  <div class="form-floating mb-3">
+    <input name="delivery" type="text" class="form-control" id="delivery">
     <label for="delivery" class="form-label">Дата доставки</label>
-    <input name="delivery" type="text " class="form-control" id="delivery">
     <div id="userLastNameHelp" class="form-text"></div>
   </div>
-  <div class="mb-3">
+  <div class="form-floating mb-3">
+    <input name="builddate" type="text" class="form-control" id="builddate">
     <label for="builddate" class="form-label">Дата сборки</label>
-    <input name="builddate" type="text " class="form-control" id="builddate">
     <div id="userLastNameHelp" class="form-text"></div>
   </div>
-  <div>
+  <div class="form-floating mb-3">
     <select name="deliveryteam" class="form-select" id="floatingSelect" aria-label="Floating label select example">
       <option >Выберите бригаду доставки</option>
       <option value="1">Бригада 1</option>
@@ -29,7 +29,7 @@
     </select>
     <label for="floatingSelect"></label>
   </div>
-  <div>
+  <div class="form-floating mb-3">
     <select name="buildteam" class="form-select" id="floatingSelect" aria-label="Floating label select example">
       <option >Выберите бригаду сборки</option>
       <option value="1">Бригада 1</option>
@@ -38,18 +38,18 @@
     </select>
     <label for="floatingSelect"></label>
   </div>
-  <div class="mb-3">
-    <label for="clientPhone" class="form-label">Введите номер телефона клиента</label>
+  <div class="form-floating mb-3">
     <input name="clientPhone" type="text " class="form-control" id="clientPhone">
+    <label for="clientPhone" class="form-label">Введите номер телефона клиента</label>
     <div id="helpclientPhone" class="form-text"></div>
   </div>
-  <div class="form-floating">
+  <div class="form-floating mb-3">
     <textarea name="comment" class="form-control" placeholder="Leave a comment here" id="comment"></textarea>
     <label for="comment">Комментарии клиента</label>
   </div>
-  <div class="mb-3">
-    <label for="author" class="form-label">Введите Ваше имя</label>
+  <div class="form-floating mb-3">
     <input name="author" type="text " class="form-control" id="author">
+    <label for="author" class="form-label">Введите Ваше имя</label>
     <div id="helpauthor" class="form-text"></div>
   </div>
 

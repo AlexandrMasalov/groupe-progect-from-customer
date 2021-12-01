@@ -1,7 +1,7 @@
-'use strict';
 const {
-  Model
+  Model,
 } = require('sequelize');
+
 module.exports = (sequelize, DataTypes) => {
   class User extends Model {
     /**
@@ -11,9 +11,9 @@ module.exports = (sequelize, DataTypes) => {
      */
     static associate(models) {
       this.hasMany(models.GroupDelivery, { foreignKey: 'user_id' }),
-        this.hasMany(models.GroupDelivery, { foreignKey: 'user_id' })
+      this.hasMany(models.GroupDelivery, { foreignKey: 'user_id' });
     }
-  };
+  }
   User.init({
     name: DataTypes.STRING,
     password: DataTypes.STRING,

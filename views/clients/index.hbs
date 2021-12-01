@@ -1,0 +1,29 @@
+
+<div class="wrapper">
+  <div class="d-flex justify-content-start m-5">
+    <a href="/clients/new" type="button" class="btn btn-outline-primary mb-3 ml-2">Добавить клиента</a>
+  </div>
+  <table class="table table-clients m-5">
+    <thead class="table-success">
+      <tr>
+        <th scope="col">ID</th>
+        <th scope="col">ФИО</th>
+        <th scope="col">address</th>
+        <th scope="col">Телефон</th>
+        <th scope="col">Заказы</th>
+      </tr>
+    </thead>
+    <tbody class="table-hover">
+
+      {{#each clients}}
+      <tr id={{this.id}}>
+        <td scope="row">{{this.id}}</td>
+        <td>{{this.surName}} {{this.name}} {{this.lastName}}</td>
+        <td>{{this.adress}}</td>
+        <td>{{this.telephone}}</td>
+        <td>Заказы</td>
+      </tr>
+      {{/each}}
+    </tbody>
+  </table>
+</div>

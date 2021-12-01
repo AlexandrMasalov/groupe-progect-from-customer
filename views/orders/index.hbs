@@ -1,39 +1,40 @@
 <div class="wrapper m-5 mt-0">
   <div class="d-flex justify-content-end">
-    <a href="/edit" type="button" class="btn btn-outline-primary mb-3">Добавить заказ</a>
-    <a href="/client" type="button" class="btn btn-outline-primary mb-3 ml-2">Добавить клиента</a>
+    <a href="/orders/new" type="button" class="btn btn-outline-primary mb-3">Добавить заказ</a>
+    <a href="/clients/new" type="button" class="btn btn-outline-primary mb-3 ml-2">Добавить клиента</a>
   </div>
-  <table class="table table-hover">
+  <table class="table table-hover table-orders">
     <thead class="table-success">
       <tr>
         <th scope="col">#Заказ</th>
         <th scope="col">Дата доставки</th>
         <th scope="col">Тип мебели</th>
-        <th scope="col">Заказчик</th>
+        <th scope="col">Клиент</th>
         <th scope="col">Сумма</th>
         <th scope="col">Статус заказа</th>
-        <th scope="col">Комментарий</th>
+        <th scope="col">Бригада доставки</th>
       </tr>
     </thead>
     <tbody>
 
       {{#each orders}}
-      <tr>
-        <th scope="row">{{this.number}}</th>
-        <td>{{this.Delivery.dataValues.data}}</td>
+      <tr data-orderId={{this.id}} class="pe-auto">
+        <td scope="row">{{this.number}}</td>
+        <td class="pe-auto">{{this.Delivery.dataValues.data}}</td>
         <td>{{this.Furniture.dataValues.type}}</td>
         <td>{{this.Client.dataValues.name}} {{this.Client.dataValues.lastName}}</td>
         <td>{{this.Furniture.dataValues.price}}</td>
         <td>{{this.Status.dataValues.type}}</td>
-        {{#each comment}}
+        <td>Бригада {{this.Delivery.dataValues.groupDelivery_id}}</td>
+        {{!-- {{#each comment}}
         <td>{{this.dataValues.body}}</td>
-        {{/each}}
+        {{/each}} --}}
       </tr>
       {{/each}}
-      
+{{!--       
         {{#each comment}}
         <td>{{this.dataValues.body}}</td>
-        {{/each}}
+        {{/each}} --}}
  
 
 

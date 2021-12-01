@@ -1,7 +1,7 @@
-'use strict';
 const {
-  Model
+  Model,
 } = require('sequelize');
+
 module.exports = (sequelize, DataTypes) => {
   class Order extends Model {
     /**
@@ -10,15 +10,14 @@ module.exports = (sequelize, DataTypes) => {
      * The `models/index` file will call this method automatically.
      */
     static associate(models) {
-      this.hasMany(models.Comment, { foreignKey: 'order_id'}),
-      this.belongsTo(models.Furniture, { foreignKey: 'furniture_id'}),
-      this.belongsTo(models.Assembly, { foreignKey: 'assembly_id'})
-      this.belongsTo(models.Delivery, { foreignKey: 'delivery_id'}),
-      this.belongsTo(models.Client, { foreignKey: 'client_id'}),
-      this.belongsTo(models.Status, { foreignKey: 'status_id'})
-      
+      this.hasMany(models.Comment, { foreignKey: 'order_id' }),
+      this.belongsTo(models.Furniture, { foreignKey: 'furniture_id' }),
+      this.belongsTo(models.Assembly, { foreignKey: 'assembly_id' });
+      this.belongsTo(models.Delivery, { foreignKey: 'delivery_id' }),
+      this.belongsTo(models.Client, { foreignKey: 'client_id' }),
+      this.belongsTo(models.Status, { foreignKey: 'status_id' });
     }
-  };
+  }
   Order.init({
     number: DataTypes.STRING,
     furniture_id: DataTypes.INTEGER,
