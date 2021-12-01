@@ -10,12 +10,11 @@ module.exports = (sequelize, DataTypes) => {
      * The `models/index` file will call this method automatically.
      */
     static associate(models) {
-      this.hasMany(models.User, { foreinkey: 'user_id'}),
-      this.belongsTo(models.Assembly, { foreinkey: 'groupeAssembly_id'})
+      this.belongsTo(models.User, { foreignKey: 'user_id'}),
+      this.hasOne(models.Assembly, { foreignKey: 'groupAssembly_id'})
     }
   };
-  GroupAssembly.init({
-    data: DataTypes.STRING,
+  GroupAssembly.init({    
     user_id: DataTypes.INTEGER
   }, {
     sequelize,
