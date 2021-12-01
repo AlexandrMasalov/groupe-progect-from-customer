@@ -1,0 +1,29 @@
+<h3 class="text-center">Создать клиента</h3>
+ <form method="POST" action="/clients/new" class="col-6 m-auto mb-5">
+  <div class="form-floating mb-3">
+    <input name="lastname" type="text " class="form-control" id="lastname">
+    <label for="lastname" class="form-label">Введите фамилию клиента</label>
+    <div id="userLastNameHelp" class="form-text"></div>
+  </div>
+  <div class="form-floating mb-3">
+    <input name="firstname" type="text " class="form-control" id="firstname">
+    <label for="firstname" class="form-label">Введите имя клиента</label>
+    <div id="userfirstNameHelp" class="form-text"></div>
+  </div>
+  <div class="form-floating mb-3">
+    <input name="middlename" type="text " class="form-control" id="middlename">
+    <label for="middlename" class="form-label">Введите отчество клиента</label>
+    <div id="usermiddletNameHelp" class="form-text"></div>
+  </div>
+  <div class="form-floating mb-3">
+    <input name="address" type="text " class="form-control" id="address">
+    <label for="address" class="form-label">Введите адрес клиента</label>
+    <div id="useraddress" class="form-text"></div>
+  </div>
+  <div class="form-floating mb-3">
+    <input name="phone" type="text " class="form-control" id="phone">
+    <label for="phone" class="form-label">Введите номер телефона клиента</label>
+    <div id="userphone" class="form-text"></div>
+  </div>
+  <button type="submit" class="btn btn-primary">Создать клиента</button>
+</form>

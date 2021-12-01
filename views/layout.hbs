@@ -10,11 +10,19 @@
 </head>
 <body>
   <header class="m-3">
-    <nav class="nav">
+    <nav class="nav d-flex justify-content-between">
       {{#if user}}
-        <a class="nav-link" href="#">Привет, {{user}}!</a>
-        <a class="nav-link active" aria-current="page" href="/orders">Главная</a>
-        <a class="nav-link" href="/logout">Выход</a>
+        <div class="d-flex">
+          <a class="nav-link" href="/furniture">Мебель</a>
+          <a class="nav-link active" aria-current="page" href="/clients">Клиенты</a>
+          <a class="nav-link" href="/orders">Заказы</a>
+          <a class="nav-link active" aria-current="page" href="/delivery">Доставка</a>
+          <a class="nav-link" href="/assembly">Сборка</a>
+        </div>
+        <div class="d-flex">
+          <a class="nav-link" href="#">Привет, {{user}}!</a>
+          <a class="nav-link" href="/logout">Выход</a>
+        </div>
       {{else}}
         <a class="nav-link active" aria-current="page" href="#">Регистрация</a>
         <a class="nav-link" href="#">Вход</a>

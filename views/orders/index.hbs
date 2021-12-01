@@ -1,9 +1,9 @@
 <div class="wrapper m-5 mt-0">
   <div class="d-flex justify-content-end">
-    <a href="/edit" type="button" class="btn btn-outline-primary mb-3">Добавить заказ</a>
-    <a href="/client" type="button" class="btn btn-outline-primary mb-3 ml-2">Добавить клиента</a>
+    <a href="/orders/new" type="button" class="btn btn-outline-primary mb-3">Добавить заказ</a>
+    <a href="/clients/new" type="button" class="btn btn-outline-primary mb-3 ml-2">Добавить клиента</a>
   </div>
-  <table class="table table-hover">
+  <table class="table">
     <thead class="table-success">
       <tr>
         <th scope="col">#Заказ</th>
@@ -15,25 +15,25 @@
         <th scope="col">Комментарий</th>
       </tr>
     </thead>
-    <tbody>
+    <tbody class="table-hover">
 
       {{#each orders}}
-      <tr>
-        <th scope="row">{{this.number}}</th>
+      <tr id={{this.id}}>
+        <td scope="row">{{this.number}}</td>
         <td>{{this.Delivery.dataValues.data}}</td>
         <td>{{this.Furniture.dataValues.type}}</td>
         <td>{{this.Client.dataValues.name}} {{this.Client.dataValues.lastName}}</td>
         <td>{{this.Furniture.dataValues.price}}</td>
         <td>{{this.Status.dataValues.type}}</td>
-        {{#each comment}}
+        {{!-- {{#each comment}}
         <td>{{this.dataValues.body}}</td>
-        {{/each}}
+        {{/each}} --}}
       </tr>
       {{/each}}
-      
+{{!--       
         {{#each comment}}
         <td>{{this.dataValues.body}}</td>
-        {{/each}}
+        {{/each}} --}}
  
 
 

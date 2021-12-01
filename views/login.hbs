@@ -1,13 +1,13 @@
 <form class="col-4 m-auto mt-5" action="/login" method="POST">
   <h2 class="text-center">Вход</h2>
-  <div class="mb-3">
-    <label for="inputEmail" class="form-label">Электронная почта</label>
-    <input name="email" type="email" class="form-control" id="inputEmail" aria-describedby="emailHelp">
+  <div class="form-floating mb-3">
+    <input name="name" type="text" class="form-control" id="inputEmail" aria-describedby="emailHelp">
+    <label for="inputEmail" class="form-label">Имя</label>
     <div id="emailHelp" class="form-text">Введите Вашу электронную почту</div>
   </div>
-  <div class="mb-3">
-    <label for="inputPassword" class="form-label">Пароль</label>
+  <div class="form-floating mb-3">
     <input name="password" type="password" class="form-control" id="inputPassword">
+    <label for="inputPassword" class="form-label">Пароль</label>
     <div id="passwordHelp" class="form-text">Введите Ваш пароль</div>
   </div>
   <div class="mb-3 form-check d-flex justify-content-between">

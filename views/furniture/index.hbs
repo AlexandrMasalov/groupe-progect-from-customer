@@ -1,0 +1,19 @@
+ <table class="table table-furniture m-5">
+    <thead class="table-success">
+      <tr>
+        <th scope="col">ID</th>
+        <th scope="col">Тип</th>
+        <th scope="col">Цена</th>
+      </tr>
+    </thead>
+    <tbody class="table-hover">
+
+      {{#each furniture}}
+      <tr id={{this.id}}>
+        <td scope="row">{{this.id}}</td>
+        <td>{{this.type}}</td>
+        <td>{{this.price}}</td>
+      </tr>
+      {{/each}}
+    </tbody>
+  </table>
