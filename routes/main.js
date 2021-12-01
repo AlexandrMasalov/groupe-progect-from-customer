@@ -11,16 +11,16 @@ router.get('/client', (req, res) => {
   res.render('client');
 });
 router.post('/client', async (req, res) => {
-  // await console.log(req.body);
-  // console.log('1111', req.body);
-  // const { firstname, lastname, middlename, address, phone } = req.body
-  // const newClient = await Client.create({
-  //   name: req.body.firstname,
-  //   lastName: req.body.lastname,
-  //   surName: req.body.middlename,
-  //   adress: req.body.address,
-  //   telephone: req.body.phone,
-  // });  
+  await console.log(req.body);
+  console.log('1111', req.body);
+  const { firstname, lastname, middlename, address, phone } = req.body
+  const newClient = await Client.create({
+    name: req.body.firstname,
+    lastName: req.body.lastname,
+    surName: req.body.middlename,
+    adress: req.body.address,
+    telephone: req.body.phone,
+  });  
 });
 
 
