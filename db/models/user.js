@@ -10,13 +10,18 @@ module.exports = (sequelize, DataTypes) => {
      * The `models/index` file will call this method automatically.
      */
     static associate(models) {
-      this.hasMany(models.GroupDelivery, { foreignKey: 'user_id' }),
-      this.hasMany(models.GroupDelivery, { foreignKey: 'user_id' });
+      this.hasOne(models.GroupDelivery, { foreignKey: 'user_id' }),
+      this.hasOne(models.GroupDelivery, { foreignKey: 'user2_id' }),
+      this.hasOne(models.GroupDelivery, { foreignKey: 'user3_id' }),
+      this.hasOne(models.GroupAssembly, { foreignKey: 'user_id' });
+      this.hasOne(models.GroupAssembly, { foreignKey: 'user2_id' });
+      this.hasOne(models.GroupAssembly, { foreignKey: 'user3_id' });
     }
   }
   User.init({
     name: DataTypes.STRING,
     password: DataTypes.STRING,
+    role: DataTypes.STRING,
   }, {
     sequelize,
     modelName: 'User',
