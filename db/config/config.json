@@ -2,8 +2,6 @@
   "development": {
     "username": "nvgertiy",
     "password": 123,
-    "username": "aleksandrmasalov",
-    "password": null,
     "database": "epicfile",
     "host": "127.0.0.1",
     "dialect": "postgres"

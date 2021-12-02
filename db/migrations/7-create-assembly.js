@@ -9,7 +9,7 @@ module.exports = {
       },
       date: {
         type: Sequelize.DATE,
-        defaultValue: Sequelize.NOW,
+        // defaultValue: Sequelize.NOW,
       },
       groupAssembly_id: {
         type: Sequelize.INTEGER,
