@@ -10,15 +10,23 @@ router
     const {
       firstname, lastname, middlename, address, phone,
     } = req.body;
-    await Client.create({
-      name: firstname,
-      lastName: lastname,
-      surName: middlename,
-      adress: address,
-      telephone: phone,
-    });
-
-    res.redirect('/orders');
+    try {
+      if (firstname, lastname, middlename, address, phone) {
+        await Client.create({
+          name: firstname,
+          lastName: lastname,
+          surName: middlename,
+          adress: address,
+          telephone: phone,
+        });
+        res.redirect('/orders');
+      }
+    } catch (error) {
+      res.render('error', {
+        message: 'Данный пользователь не зарегистрирован',
+        error: {},
+      });
+    }
   });
-  
-  module.exports = router;
+
+module.exports = router;
