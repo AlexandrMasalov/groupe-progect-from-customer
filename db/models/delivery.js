@@ -15,7 +15,7 @@ module.exports = (sequelize, DataTypes) => {
     }
   }
   Delivery.init({
-    data: DataTypes.STRING,
+    date: DataTypes.DATE,
     groupDelivery_id: DataTypes.INTEGER,
   }, {
     sequelize,
