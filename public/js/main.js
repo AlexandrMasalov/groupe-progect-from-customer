@@ -1,6 +1,15 @@
 const $tableOrders = document.querySelector('.table-orders');
 const $wrapper = document.querySelector('.wrapper');
 
+
+function renderClient() {
+  return `<h1>Privet</h1>`
+}
+
+
+
+
+
 function renderCard(order) {
   return `
   <div class="col-6 m-auto">
@@ -36,14 +45,51 @@ $tableOrders?.addEventListener('dblclick', async (e) => {
       },
     };
     const response = await fetch(`/orders/card/${orderId}`, options);
-
     const order = await response.json();
 
     console.log(order);
-
+    console.log(order);
     if (response.status) {
       $wrapper.innerHTML = '';
       $wrapper.insertAdjacentHTML('afterbegin', renderCard(order.order));
     }
+  }
+});
+
+
+// Карточка Клиента
+const $tableClients = document.querySelector('.table-clients');
+$tableClients?.addEventListener('dblclick', async (e) => {
+  if (e.target.nodeName === 'TD') {
+    // console.log(e.target);
+    const tableRow = e.target.closest('[data-clientid]')
+    const clientId = tableRow.dataset.clientid
+    // console.log(clientId);
+    const options = {
+      method: 'GET',
+      headers: {
+        'Content-Type': 'application/json',
+      },
+    };
+    // console.log(clientId);
+    const response = await fetch(`/clients/card/${clientId}`, options);
+    const { orders, client } = await response.json();
+
+    console.log(orders.length, '11111')
+    console.log(client, '2222')
+
+  
+    
+
+    if (response.status) {
+      // $wrapper.insertAdjacentHTML('afterbegin', renderCard(client));
+      console.log(123);
+      $wrapper.innerHTML = '';
+      orders.forEach(order => {
+        $wrapper.insertAdjacentHTML('afterbegin', renderCard(order, client));
+      });
+    }
+
+
   }
 });
