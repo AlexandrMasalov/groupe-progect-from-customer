@@ -28,6 +28,7 @@ const newOrderRouter = require('./routes/orders/new');
 const clientsRouter = require('./routes/clients');
 const newClientRouter = require('./routes/clients/new');
 const furnitureRouter = require('./routes/furniture');
+const clientCardRouter = require('./routes/clients/showall');
 
 app.set('views', path.join(__dirname, 'views'));
 app.set('view engine', 'hbs');
@@ -52,5 +53,9 @@ app.use('/orders/new', newOrderRouter);
 app.use('/clients', clientsRouter);
 app.use('/clients/new', newClientRouter);
 app.use('/furniture', furnitureRouter);
+app.use('/clients', clientCardRouter)
+
+
+
 
 module.exports = app;

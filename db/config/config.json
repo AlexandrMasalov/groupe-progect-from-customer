@@ -1,8 +1,8 @@
 {
   "development": {
-    "username": "postgres",
-    "password": "bershka8820!",
-    "database": "furniture",
+    "username": "nvgertiy",
+    "password": 123,
+    "database": "epicfile",
     "host": "127.0.0.1",
     "dialect": "postgres"
   },
