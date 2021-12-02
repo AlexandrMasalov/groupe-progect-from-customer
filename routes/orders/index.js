@@ -1,14 +1,7 @@
 const router = require('express').Router();
 const { Order } = require('../../db/models');
 
-function isLogin(req, res, next) {
-  if (!req.session.user) {
-    res.redirect('/login');
-  }
-  next();
-}
-
-router.get('/', isLogin, async (req, res) => {
+router.get('/', async (req, res) => {
   const orders = await Order.findAll({ include: { all: true } });
   // const comment = orders[0].dataValues.Comments;
   // let comment = orders[0].dataValues.Comments
@@ -19,7 +12,6 @@ router.get('/', isLogin, async (req, res) => {
 });
 
 router.get('/card/:id', async (req, res) => {
-  console.log('req.params>>>>>>>>>>', req.params);
   const { id } = req.params;
   const order = await Order.findOne({ include: { all: true }, where: { id } });
 

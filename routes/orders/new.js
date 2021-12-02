@@ -10,7 +10,7 @@ router.get('/', (req, res) => {
 
 router.post('/', async (req, res) => {
   const {
-    orderNumber, furniture, cost, delivery, builddate, deliveryteam, buildteam, clientPhone, comment, author,
+    orderNumber, furniture, cost, delivery, builddate, deliveryteam, buildteam, clientPhone, comment,
   } = req.body;
 
   console.log('req.body', req.body);
@@ -51,7 +51,7 @@ router.post('/', async (req, res) => {
   const checkOrder = await Order.findOne({ where: { number: orderNumber } });
 
   const newComment = await Comment.create({
-    author,
+    author: req.session.user,
     body: comment,
     client_id: checkUser.id,
     order_id: checkOrder.id,
