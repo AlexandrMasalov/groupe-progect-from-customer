@@ -24,6 +24,7 @@ const mainRouter = require('./routes/main');
 const loginRouter = require('./routes/login');
 const logoutRouter = require('./routes/logout');
 const ordersRouter = require('./routes/orders');
+const orderCardRouter = require('./routes/orders/card');
 const newOrderRouter = require('./routes/orders/new');
 const clientsRouter = require('./routes/clients');
 const newClientRouter = require('./routes/clients/new');
@@ -53,10 +54,11 @@ function isLogin(req, res, next) {
   next();
 }
 
-app.use('/', isLogin, mainRouter); // ссылка на роуты
+app.use('/', mainRouter); // ссылка на роуты
 app.use('/login', loginRouter);
 app.use('/logout', isLogin, logoutRouter);
 app.use('/orders', isLogin, ordersRouter);
+app.use('/orders/card', isLogin, orderCardRouter);
 app.use('/orders/new', isLogin, newOrderRouter);
 app.use('/clients', isLogin, clientsRouter);
 app.use('/clients/new', isLogin, newClientRouter);

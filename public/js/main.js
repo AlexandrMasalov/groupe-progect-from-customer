@@ -16,8 +16,9 @@ function renderComment(comment) {
 
 function renderCardOrder(order) {
   return `
-    <div data-orderid=${order.id} class="col-6 m-auto">
+    <div data-orderid=${order.id} class="col-10 m-5 mt-0 m-auto shadow-lg p-5 pt-5 bg-body rounded">
       <h3 class="text-center">Заказ №${order.number}</h3>
+      <a href="/orders/card/${order.id}/edit" class="btn btn-danger mb-3">Редактировать</a>
       <ul data-clientid=${order.Client.id} class="list-group list-group-flush">
         <li class="list-group-item list-group-item-action list-group-item-secondary mb-2">Тип мебели: <span class="p-3 fw-bolder"> ${order.Furniture.type}<span></li>
         <li class="list-group-item list-group-item-action list-group-item-secondary mb-2">Цена: <span class="p-3 fw-bolder">${order.Furniture.price}<span></li>
