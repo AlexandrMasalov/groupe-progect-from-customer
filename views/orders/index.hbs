@@ -20,7 +20,7 @@
       {{#each orders}}
       <tr data-orderId={{this.id}} class="pe-auto">
         <td scope="row">{{this.number}}</td>
-        <td class="pe-auto">{{this.Delivery.dataValues.data}}</td>
+        <td class="pe-auto">{{this.Delivery.dataValues.date}}</td>
         <td>{{this.Furniture.dataValues.type}}</td>
         <td>{{this.Client.dataValues.name}} {{this.Client.dataValues.lastName}}</td>
         <td>{{this.Furniture.dataValues.price}}</td>

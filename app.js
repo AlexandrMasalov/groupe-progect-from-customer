@@ -28,7 +28,11 @@ const newOrderRouter = require('./routes/orders/new');
 const clientsRouter = require('./routes/clients');
 const newClientRouter = require('./routes/clients/new');
 const furnitureRouter = require('./routes/furniture');
+<<<<<<< HEAD
 const commentRouter = require('./routes/comments');
+=======
+const clientCardRouter = require('./routes/clients/showall');
+>>>>>>> origin
 
 app.set('views', path.join(__dirname, 'views'));
 app.set('view engine', 'hbs');
@@ -54,6 +58,7 @@ function isLogin(req, res, next) {
 
 app.use('/', isLogin, mainRouter); // ссылка на роуты
 app.use('/login', loginRouter);
+<<<<<<< HEAD
 app.use('/logout', isLogin, logoutRouter);
 app.use('/orders', isLogin, ordersRouter);
 app.use('/orders/new', isLogin, newOrderRouter);
@@ -61,5 +66,17 @@ app.use('/clients', isLogin, clientsRouter);
 app.use('/clients/new', isLogin, newClientRouter);
 app.use('/furniture', isLogin, furnitureRouter);
 app.use('/comments', isLogin, commentRouter);
+=======
+app.use('/logout', logoutRouter);
+app.use('/orders', ordersRouter);
+app.use('/orders/new', newOrderRouter);
+app.use('/clients', clientsRouter);
+app.use('/clients/new', newClientRouter);
+app.use('/furniture', furnitureRouter);
+app.use('/clients', clientCardRouter)
+
+
+
+>>>>>>> origin
 
 module.exports = app;

@@ -7,8 +7,9 @@ module.exports = {
         primaryKey: true,
         type: Sequelize.INTEGER,
       },
-      data: {
-        type: Sequelize.STRING,
+      date: {
+        type: Sequelize.DATE,
+        // defaultValue: Sequelize.NOW,
       },
       groupAssembly_id: {
         type: Sequelize.INTEGER,
