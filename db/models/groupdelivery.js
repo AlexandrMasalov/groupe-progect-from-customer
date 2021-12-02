@@ -11,11 +11,15 @@ module.exports = (sequelize, DataTypes) => {
      */
     static associate(models) {
       this.belongsTo(models.User, { foreignKey: 'user_id' }),
+      this.belongsTo(models.User, { foreignKey: 'user2_id' }),
+      this.belongsTo(models.User, { foreignKey: 'user3_id' }),
       this.hasOne(models.Delivery, { foreignKey: 'groupDelivery_id' });
     }
   }
   GroupDelivery.init({
     user_id: DataTypes.INTEGER,
+    user2_id: DataTypes.INTEGER,
+    user3_id: DataTypes.INTEGER,
   }, {
     sequelize,
     modelName: 'GroupDelivery',

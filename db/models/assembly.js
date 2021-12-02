@@ -15,7 +15,7 @@ module.exports = (sequelize, DataTypes) => {
     }
   }
   Assembly.init({
-    data: DataTypes.STRING,
+    date: DataTypes.DATE,
     groupAssembly_id: DataTypes.INTEGER,
   }, {
     sequelize,

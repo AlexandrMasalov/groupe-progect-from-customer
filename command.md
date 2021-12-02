@@ -14,6 +14,8 @@ npx sequelize-cli seed:generate --name User
 npx sequelize-cli seed:generate --name Furniture
 npx sequelize-cli seed:generate --name Client
 npx sequelize-cli seed:generate --name Status
+npx sequelize-cli seed:generate --name GroupDelivery
+npx sequelize-cli seed:generate --name GroupAssembly
 
 
 
@@ -21,4 +23,14 @@ npx sequelize-cli seed:generate --name Status
 
 
 
+npx sequelize-cli db:drop
+npx sequelize-cli db:create
+npx sequelize-cli db:migrate
+npx sequelize-cli db:migrate:undo:all
 npx sequelize-cli db:seed:all
+ 
+"username": "aleksandrmasalov",
+    "password": null,
+    "database": "epicfile",
+    "host": "127.0.0.1",
+    "dialect": "postgres"
