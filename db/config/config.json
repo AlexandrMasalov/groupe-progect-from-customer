@@ -1,21 +1,21 @@
 {
   "development": {
-    "username": "postgres",
-    "password": "bershka8820!",
-    "database": "furniture",
+    "username": "aleksandrmasalov",
+    "password": null,
+    "database": "epicfile",
     "host": "127.0.0.1",
     "dialect": "postgres"
   },
   "test": {
-    "username": "nvgertiy",
-    "password": 123,
+    "username": "aleksandrmasalov",
+    "password": null,
     "database": "epicfile",
     "host": "127.0.0.1",
     "dialect": "postgres"
   },
   "production": {
-    "username": "nvgertiy",
-    "password": 123,
+    "username": "aleksandrmasalov",
+    "password": null,
     "database": "epicfile",
     "host": "127.0.0.1",
     "dialect": "postgres"

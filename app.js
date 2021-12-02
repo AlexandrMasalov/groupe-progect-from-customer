@@ -30,6 +30,7 @@ const newClientRouter = require('./routes/clients/new');
 const furnitureRouter = require('./routes/furniture');
 const commentRouter = require('./routes/comments');
 const clientCardRouter = require('./routes/clients/showall');
+const adminRouter = require('./routes/admin/users');
 
 app.set('views', path.join(__dirname, 'views'));
 app.set('view engine', 'hbs');
@@ -53,7 +54,7 @@ function isLogin(req, res, next) {
   next();
 }
 
-app.use('/', isLogin, mainRouter); // ссылка на роуты
+app.use('/', mainRouter); // ссылка на роуты
 app.use('/login', loginRouter);
 app.use('/logout', isLogin, logoutRouter);
 app.use('/orders', isLogin, ordersRouter);
@@ -62,6 +63,7 @@ app.use('/clients', isLogin, clientsRouter);
 app.use('/clients/new', isLogin, newClientRouter);
 app.use('/furniture', isLogin, furnitureRouter);
 app.use('/comments', isLogin, commentRouter);
-app.use('/clients', isLogin, clientCardRouter);
+// app.use('/clients', isLogin, clientCardRouter);
+app.use('/users', adminRouter);
 
 module.exports = app;

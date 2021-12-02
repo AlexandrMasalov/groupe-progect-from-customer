@@ -1,0 +1,30 @@
+<form method="POST" action="/users/registers/{{dataUser.id}}" class="col-6 m-auto">
+  <div class="mb-3">
+    <label for="user-name" class="form-label">Имя</label>
+    <input name="name" type="text " class="form-control" id="user-name" value="{{dataUser.name}}">
+    <div id="userNameHelp" class="form-text">Введите Ваше имя</div>
+  </div>
+  <div class="mb-3">
+    <label for="inputEmail" class="form-label">Электронная почта</label>
+    <input name="email" type="email" class="form-control" id="inputEmail" aria-describedby="emailHelp" value="{{dataUser.email}}">
+    <div id="emailHelp" class="form-text">Электронная почта должна быть уникальной</div>
+  </div>
+  <div class="mb-3">
+    <label for="inputPassword" class="form-label">Введите пароль</label>
+    <input name="password" type="password" class="form-control" id="inputPassword" value="{{dataUser.password}}">
+    <div id="passwordHelp" class="form-text">Введите пароль</div>
+  </div>
+  <div class="mb-3 form-floating">
+    <select name="role" class="form-select" id="floatingSelect" aria-label="Floating label select example">
+      {{!-- <option selected>Должность</option> --}}
+      <option value="admin">admin</option>
+      <option value="Администратор">Администратор</option>
+      <option value="Бригадир доставки">Бригадир доставки</option>
+      <option value="Бригадир сборки">Бригадир сборки</option>
+      <option value="Сборщик">Сборщик</option>
+      <option value="Доставщик">Доставщик</option>
+    </select>
+    <label for="floatingSelect">Выберите должность</label>
+  </div>
+  <button type="submit" class="btn btn-primary">Submit</button>
+</form>
