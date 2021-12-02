@@ -1,4 +1,5 @@
 const router = require('express').Router();
+const dayjs = require('dayjs');
 const { Order } = require('../../db/models');
 
 function isLogin(req, res, next) {
@@ -22,8 +23,12 @@ router.get('/card/:id', async (req, res) => {
   console.log('req.params>>>>>>>>>>', req.params);
   const { id } = req.params;
   const order = await Order.findOne({ include: { all: true }, where: { id } });
+  console.log(order.Delivery.dataValues.date);
 
-  res.json({ order });
+  const newDate = dayjs(order.Delivery.dataValues.date).format('YY-MM-DD HH:mm');
+  res.json({ order, newDate });
 });
 
 module.exports = router;
+
+dayjs().format('{YYYY} MM-DDTHH:mm');
