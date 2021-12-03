@@ -1,5 +1,5 @@
 const router = require('express').Router();
-const { User } = require('../../db/models');
+const { User, GroupDelivery, GroupAssembly } = require('../../db/models');
 
 router
   .route('/')
@@ -26,9 +26,22 @@ router
       order: [
         ['id']
       ] });
-    console.log(allUser);
     res.render('users/allusers', { allUser });
   });
+
+  router
+  .route('/groupdel')
+  .get( async (req, res) => {
+    const allGroupDel = await GroupDelivery.findAll();
+    res.render('users/allgroupdel', { allGroupDel }) 
+  }) 
+ 
+  router
+  .route('/groupass')
+  .get( async (req, res) => {
+    const allGroupAss = await GroupAssembly.findAll();
+    res.render('users/allgroupass', { allGroupAss })
+  })
 
   router
     .route('/registers/:id')
