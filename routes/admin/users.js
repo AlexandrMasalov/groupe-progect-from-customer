@@ -39,7 +39,7 @@ router
   .route('/groupdel')
   .get(async (req, res) => {
     const allGroupDel = await GroupDelivery.findAll();
-    let manyUsers = [];
+    let manyUsersDel = [];
       for (let i = 0; i < allGroupDel.length; i++) {
         let ID = allGroupDel[i].dataValues.id;
         let userID = allGroupDel[i].dataValues.user_id;
@@ -48,9 +48,9 @@ router
         let nameUs1 = await User.findOne({ where: { id: userID } });
         let nameUs2 = await User.findOne({ where: { id: userID2 } });
         let nameUs3 = await User.findOne({ where: { id: userID3 } });
-        manyUsers.push({ id: ID, user_id: nameUs1.dataValues.name, user2_id: nameUs2.dataValues.name, user3_id: nameUs3.dataValues.name });
+        manyUsersDel.push({ id: ID, user_id: nameUs1.dataValues.name, user2_id: nameUs2.dataValues.name, user3_id: nameUs3.dataValues.name });
       }
-      res.render('users/allgroupdel', { manyUsers }) 
+      res.render('users/allgroupdel', { manyUsersDel }) 
     })
  
   router
@@ -71,24 +71,38 @@ router
       res.render('users/allgroupass', { manyUsers })  
     })
 
-    // router
-    //   .route('/groupdeladd') 
-    //   .get( async (req, res) => {
-    //     const brigadir = await User.findAll({ where: { role: "Бригадир доставки"}});
-    //     const dostav = await User.findAll({ where: { role: "Доставщик"}});
-    //     // console.log(brigadir, '============== ===== ======== === ===== == ==== ==');
-    //     res.render('users/groupdeladd', { brigadir, dostav });
-    //   })
-    //   .post( async (req, res) => {
-    //     const { roleBr, roleDost, roleDost2 } = req.body;
-    //     // console.log(roleBr, roleDost, roleDost2, '++++++++++++++++ +++++++');
-    //     let Br = await User.findOne({ where: { name: roleBr } });
-    //     let Dost = await User.findOne({ where: { name: roleDost } });
-    //     let Dost2 = await User.findOne({ where: { name: roleDost2 } });
-    //     // console.log(Br.dataValues.id, Dost.dataValues.id, Dost2.dataValues.id, '++++++++++++++++ +++++++');
-    //     await GroupDelivery.create({ user_id: Br.dataValues.id, user2_id: Dost.dataValues.id, user3_id: Dost2.dataValues.id})
-    //     res.redirect('/users');
-    //   })
+    router
+      .route('/groupassadd') 
+      .get( async (req, res) => {
+        const brigadirSb = await User.findAll({ where: { role: "Бригадир сборки"}});
+        const sbor = await User.findAll({ where: { role: "Сборщик"}});
+        res.render('users/groupassadd', { brigadirSb, sbor });
+      })
+      .post( async (req, res) => {
+        const { roleBrSbor, roleSbor, roleSbor2 } = req.body;
+        let BrSbor = await User.findOne({ where: { name: roleBrSbor } });
+        let Sbor = await User.findOne({ where: { name: roleSbor } });
+        let Sbor2 = await User.findOne({ where: { name: roleSbor2 } });
+        // console.log(Br.dataValues.id, Dost.dataValues.id, Dost2.dataValues.id, '++++++++++++++++ +++++++');
+        await GroupAssembly.create({ user_id: BrSbor.dataValues.id, user2_id: Sbor.dataValues.id, user3_id: Sbor2.dataValues.id})
+        res.redirect('/users/groupass');
+      })
+    router
+      .route('/groupdeladd') 
+      .get( async (req, res) => {
+        const brigadir = await User.findAll({ where: { role: "Бригадир доставки"}});
+        const dostav = await User.findAll({ where: { role: "Доставщик"}});
+        res.render('users/groupdeladd', { brigadir, dostav });
+      })
+      .post( async (req, res) => {
+        const { roleBr, roleDost, roleDost2 } = req.body;
+        let Br = await User.findOne({ where: { name: roleBr } });
+        let Dost = await User.findOne({ where: { name: roleDost } });
+        let Dost2 = await User.findOne({ where: { name: roleDost2 } });
+        // console.log(Br.dataValues.id, Dost.dataValues.id, Dost2.dataValues.id, '++++++++++++++++ +++++++');
+        await GroupDelivery.create({ user_id: Br.dataValues.id, user2_id: Dost.dataValues.id, user3_id: Dost2.dataValues.id})
+        res.redirect('/usersgroupdel');
+      })
 
   router
     .route('/registers/:id')

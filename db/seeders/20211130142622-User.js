@@ -11,6 +11,7 @@ module.exports = {
       { name: 'Аскольд Сидоров', password: '123', email: 'user8@example.com', role: 'Доставщик' },
       { name: 'Эдгар Сидоров', password: '123', email: 'user9@example.com', role: 'Доставщик' },
       { name: 'Эгродоган Сидоров', password: '123', email: 'user99@example.com', role: 'Доставщик' },
+      { name: 'qq', password: '123', email: 'user929@example.com', role: 'admin' },
     ], {});
   },
 

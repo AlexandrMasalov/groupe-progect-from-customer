@@ -2,8 +2,8 @@
 <form method="POST" action="/users/groupdeladd" class="col-6 m-auto">
     <div class="mb-3 form-floating">
     <select name="roleBr" class="form-select" id="floatingSelect" aria-label="Floating label select example">
-      <option selected>Бригадир доставки</option>
-  {{#each brigadir}}
+      <option selected>Бригадир сборки</option>
+  {{#each brigadirSb}}
       <option value="{{this.name}}">{{this.name}}</option>
   {{/each}}
     </select>
@@ -11,21 +11,21 @@
   </div>
   <div class="mb-3 form-floating">
     <select name="roleDost" class="form-select" id="floatingSelect" aria-label="Floating label select example">
-      <option selected>Доставщик</option>
-  {{#each dostav}}
+      <option selected>Сборщик</option>
+  {{#each sbor}}
       <option value="{{this.name}}">{{this.name}}</option>
   {{/each}}
     </select>
-    <label for="floatingSelect">Выберите доставщика</label>
+    <label for="floatingSelect">Выберите сборщика</label>
   </div>
   <div class="mb-3 form-floating">
     <select name="roleDost2" class="form-select" id="floatingSelect" aria-label="Floating label select example">
-      <option selected>Доставщик</option>
-  {{#each dostav}}
+      <option selected>Сборщик</option>
+  {{#each sbor}}
       <option value="{{this.name}}">{{this.name}}</option>
   {{/each}}
     </select>
-    <label for="floatingSelect">Выберите доставщика</label>
+    <label for="floatingSelect">Выберите сборщика</label>
   </div>
   <div class="mb-3 form-check">
   </div>
