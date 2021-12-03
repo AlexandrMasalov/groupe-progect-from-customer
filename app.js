@@ -35,7 +35,7 @@ const adminRouter = require('./routes/admin/users');
 
 app.set('views', path.join(__dirname, 'views'));
 app.set('view engine', 'hbs');
- 
+
 app.use(cookieParser());
 app.use(logger('dev'));
 app.use(express.json());
@@ -65,7 +65,7 @@ app.use('/clients', isLogin, clientsRouter);
 app.use('/clients/new', isLogin, newClientRouter);
 app.use('/furniture', isLogin, furnitureRouter);
 app.use('/comments', isLogin, commentRouter);
-// app.use('/clients', isLogin, clientCardRouter);
+app.use('/clients/card', isLogin, clientCardRouter);
 app.use('/users', adminRouter);
 
 module.exports = app;

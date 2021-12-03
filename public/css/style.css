@@ -37,5 +37,11 @@ body {
 
 }
 
+.admin div {
+  color:#7875B5;
+}
+.admin div:hover{
+  background:  #7875B5;
+}
 
 

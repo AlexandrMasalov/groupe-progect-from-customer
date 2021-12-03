@@ -104,7 +104,7 @@ $tableOrders?.addEventListener('dblclick', async (e) => {
     }
   }
 });
-   
+
 // Карточка Клиента
 const $tableClients = document.querySelector('.table-clients');
 $tableClients?.addEventListener('dblclick', async (e) => {
