@@ -2,7 +2,7 @@ const router = require('express').Router();
 const { Client, Order } = require('../../db/models');
 
 router
-  .route('/card/:id')
+  .route('/:id')
   .get(async (req, res) => {
     console.log('req.params>>>>>>>>>>', req.params);
     const { id } = req.params;

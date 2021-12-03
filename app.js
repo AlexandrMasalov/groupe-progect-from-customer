@@ -35,7 +35,7 @@ const adminRouter = require('./routes/admin/users');
 
 app.set('views', path.join(__dirname, 'views'));
 app.set('view engine', 'hbs');
- 
+
 app.use(cookieParser());
 app.use(logger('dev'));
 app.use(express.json());
@@ -44,9 +44,19 @@ app.use(express.static(path.join(__dirname, 'public')));
 app.use(session(sessionConfig));
 
 app.use((req, res, next) => {
+  if (req.session.role) {
+    res.locals.role = req.session.role;
+  }
   res.locals.user = req.session.user;
   next();
 });
+
+function isAdmin(req, res, next) {
+  if (!req.session.role) {
+    res.redirect('/orders');
+  }
+  next();
+}
 
 function isLogin(req, res, next) {
   if (!req.session.user) {
@@ -65,7 +75,7 @@ app.use('/clients', isLogin, clientsRouter);
 app.use('/clients/new', isLogin, newClientRouter);
 app.use('/furniture', isLogin, furnitureRouter);
 app.use('/comments', isLogin, commentRouter);
-// app.use('/clients', isLogin, clientCardRouter);
-app.use('/users', adminRouter);
+app.use('/clients/card', isLogin, clientCardRouter);
+app.use('/users', isLogin, isAdmin, adminRouter);
 
 module.exports = app;

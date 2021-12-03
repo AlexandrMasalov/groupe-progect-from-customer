@@ -1,8 +1,10 @@
 
 <div class="wrapper m-5 mt-0 shadow-lg p-5 pt-5 bg-body rounded">
+  {{#if admin}}
   <div class="d-flex justify-content-start mb-3">
     <a href="/clients/new" type="button" class="btn btn-primary">Добавить клиента</a>
   </div>
+  {{/if}}
   <table class="table table-clients table-hover">
     <thead>
       <tr>

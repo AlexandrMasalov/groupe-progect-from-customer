@@ -1,4 +1,5 @@
 const router = require('express').Router();
+const bcrypt = require('bcrypt');
 const { User } = require('../db/models');
 
 router
@@ -11,10 +12,11 @@ router
     console.log('111111111111', name, password);
     if (name && password) {
       try {
-        const user = await User.findOne({ where: { name, password } });
+        const user = await User.findOne({ where: { name } });
         console.log(user, '33333333333');
-        if (user) {
+        if (user && bcrypt.compare(password, user.password)) {
           req.session.user = name;
+          if (user.role == 'admin') { req.session.role = user.role; }
           res.redirect('/orders');
         } else { throw new Error(); }
       } catch (error) {
