@@ -12,13 +12,13 @@
     <div id="userLastNameHelp" class="form-text"></div>
   </div>
   <div class="form-floating mb-3">
-    <input name="delivery" type="datetime-local" class="form-control" id="delivery" value={{order.Delivery.date}}>
-    <label for="delivery" class="form-label"></label>
+    <input name="delivery" type="datetime-local" class="form-control" id="delivery" value="{{order.Delivery.date}}">
+    <label for="delivery" class="form-label">{{order.Delivery.date}}</label>
     <div id="userLastNameHelp" class="form-text"></div>
   </div>
   <div class="form-floating mb-3">
-    <input name="builddate" type="datetime-local" class="form-control" id="builddate" value={{order.Assembly.date}}>
-  <label for="builddate" class="form-label"></label>
+    <input name="builddate" type="datetime-local" class="form-control" id="builddate" value="{{order.Assembly.date}}">
+  <label for="builddate" class="form-label">{{order.Assembly.date}}</label>
     <div id="userLastNameHelp" class="form-text"></div>
   </div>
   <div class="form-floating mb-3">
@@ -28,7 +28,7 @@
       <option value="2">Бригада 2</option>
       <option value="3">Бригада 3</option>
     </select>
-    <label for="floatingSelect">Бригада доставки</label>
+    <label for="floatingSelect">Бригада доставки {{order.Delivery.groupDelivery_id}}</label>
   </div>
   <div class="form-floating mb-3">
     <select name="buildteam" class="form-select" id="floatingSelect" aria-label="Floating label select example" >
@@ -37,7 +37,7 @@
       <option value="2">Бригада 2</option>
       <option value="3">Бригада 3</option>
     </select>
-    <label for="floatingSelect">Бригада сборки</label>
+    <label for="floatingSelect">Бригада сборки {{order.Assembly.groupAssembly_id}}</label>
   </div>
     <div class="form-floating mb-3">
     <select name="status" class="form-select" id="floatingSelect" aria-label="Floating label select example">
@@ -51,13 +51,13 @@
     <label for="floatingSelect"></label>
   </div>
   <div class="form-floating mb-3">
-    <input name="clientAdress" type="text " class="form-control" id="clientAdress" value={{order.Client.adress}}>
-    <label for="clientAdress" class="form-label"></label>
+    <input name="clientAdress" type="text " class="form-control" id="clientAdress" value="{{order.Client.adress}}">
+    <label for="clientAdress" class="form-label">{{order.Client.adress}}</label>
     <div id="helpclientPhone" class="form-text"></div>
   </div>
   <div class="form-floating mb-3">
     <input name="clientPhone" type="text " class="form-control" id="clientPhone" value={{order.Client.telephone}}>
-    <label for="clientPhone" class="form-label"></label>
+    <label for="clientPhone" class="form-label">{{order.Client.telephone}}</label>
     <div id="helpclientPhone" class="form-text"></div>
   </div>
   <button type="submit" class="btn btn-primary">Сохранить</button>
