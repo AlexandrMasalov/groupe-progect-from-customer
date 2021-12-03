@@ -10,12 +10,19 @@ router.get('/', (req, res) => {
 
 router.post('/', async (req, res) => {
   const {
-    orderNumber, furniture, cost, delivery, builddate, deliveryteam, buildteam, clientPhone, comment,
+    orderNumber,
+    furniture,
+    delivery,
+    builddate,
+    deliveryteam,
+    buildteam,
+    clientPhone,
+    comment,
   } = req.body;
   // console.log(Date.parse(delivery),'555555555555');
   // console.log(new Date (delivery),'77777777777777');
   try {
-    if (orderNumber && furniture && cost && delivery && builddate && deliveryteam && buildteam && clientPhone && comment) {
+    if (orderNumber && furniture && delivery && builddate && deliveryteam && buildteam && clientPhone && comment) {
       try {
         // создание доставки
         const newDelivery = await Delivery.create({
@@ -39,6 +46,7 @@ router.post('/', async (req, res) => {
         console.log(checkAssembly.id, '3333');
         const checkUser = await Client.findOne({ where: { telephone: clientPhone } });
         console.log(checkUser.id, '44444');
+        console.log('req.body>>>>>>>>>>', req.body);
 
         const newOrder = await Order.create({
           number: orderNumber,

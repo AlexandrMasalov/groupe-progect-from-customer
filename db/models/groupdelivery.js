@@ -23,6 +23,7 @@ module.exports = (sequelize, DataTypes) => {
   }, {
     sequelize,
     modelName: 'GroupDelivery',
+    // timestamps: false,
   });
   return GroupDelivery;
 };

@@ -4,7 +4,7 @@ const { User } = require('../db/models');
 router
   .route('/')
   .get((req, res) => {
-    res.render('login');
+    res.render('login2');
   })
   .post(async (req, res) => {
     const { name, password } = req.body;
@@ -12,6 +12,7 @@ router
     if (name && password) {
       try {
         const user = await User.findOne({ where: { name, password } });
+        console.log(user, '33333333333');
         if (user) {
           req.session.user = name;
           res.redirect('/orders');

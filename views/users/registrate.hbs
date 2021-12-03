@@ -1,0 +1,36 @@
+
+<form method="POST" action="/users/regusers" class="col-6 m-auto">
+  <div class="mb-3">
+    <label for="user-name" class="form-label">Имя</label>
+    <input name="name" type="text " class="form-control" id="user-name" value="qwer">
+    <div id="userNameHelp" class="form-text">Введите имя</div>
+  </div>
+  <div class="mb-3">
+    <label for="inputEmail" class="form-label">Электронная почта</label>
+    <input name="email" type="email" class="form-control" id="inputEmail" aria-describedby="emailHelp" value="qwer@slkd.qq">
+    <div id="emailHelp" class="form-text">Введите электронную почту</div>
+  </div>
+  <div class="mb-3">
+    <label for="inputPassword" class="form-label">Введите пароль</label>
+    <input name="password" type="password" class="form-control" id="inputPassword" value="1234">
+    <div id="passwordHelp" class="form-text">Введите пароль</div>
+  </div>
+  <div class="mb-3 form-floating">
+    <select name="role" class="form-select" id="floatingSelect" aria-label="Floating label select example">
+      {{!-- <option selected>Должность</option> --}}
+      <option value="admin">admin</option>
+      <option value="Администратор">Администратор</option>
+      <option value="Бригадир доставки">Бригадир доставки</option>
+      <option value="Бригадир сборки">Бригадир сборки</option>
+      <option value="Сборщик">Сборщик</option>
+      <option value="Доставщик">Доставщик</option>
+      {{!-- <option selected value="7">Администратор</option> --}}
+    </select>
+    <label for="floatingSelect">Выберите должность</label>
+  </div>
+  <div class="mb-3 form-check">
+    <input type="checkbox" class="form-check-input" id="exampleCheck1">
+    <label class="form-check-label" for="exampleCheck1">Запомнить пароль</label>
+  </div>
+  <button type="submit" class="btn btn-primary">Submit</button>
+</form>

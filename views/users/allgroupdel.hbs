@@ -1,0 +1,30 @@
+<div class="wrapper m-5 mt-0">
+  <div class="d-flex justify-content-end">
+    <a href="/users/groupdel" type="button" class="btn btn-outline-primary mb-3 ml-2">Добавить бригаду</a>
+  </div>
+  <table class="table table-hover table-orders">
+    <thead class="table-success">
+      <tr>
+        <th scope="col">Номер</th>
+        <th scope="col">Бригадир доставки</th>
+        <th scope="col">Доставщик</th>
+        <th scope="col">Доставщик</th>
+      </tr>
+    </thead>
+    <tbody>
+
+      {{#each allGroupDel}}
+      <tr data-orderId={{this.id}} class="pe-auto">
+        <td scope="row">{{this.id}}</td>
+        <td>{{this.user_id}}</td>
+        <td>{{this.user2_id}}</td>        
+        <td>{{this.user3_id}}</td>        
+      </tr>
+      {{/each}}
+      
+ 
+
+
+    </tbody>
+  </table>
+</div>

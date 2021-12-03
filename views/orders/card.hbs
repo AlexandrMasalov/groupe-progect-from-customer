@@ -1,2 +1,66 @@
-
+<div class="col-6 m-5 mt-0 m-auto shadow-lg p-5 pt-5 bg-body rounded">
+<h3 data-orderId={{order.id}} class="text-center">Редактировать заказ</h2>
+<form data-edit="card-order" method="POST" action="/orders/card/{{order.id}}/edit">
+  <div class="form-floating mb-3">
+    <input name="orderNumber" type="text " class="form-control" id="orderNumber" value={{order.number}}>
+    <label for="orderNumber" class="form-label"></label>
+    <div id="userNameHelp" class="form-text"></div>
+  </div>
+  <div class="form-floating mb-3">
+    <input name="furniture" type="text" class="form-control" id="furniture" value={{order.Furniture.dataValues.type }}>
+    <label for="furniture" class="form-label"></label>
+    <div id="userLastNameHelp" class="form-text"></div>
+  </div>
+  <div class="form-floating mb-3">
+    <input name="delivery" type="datetime-local" class="form-control" id="delivery" value="{{order.Delivery.date}}">
+    <label for="delivery" class="form-label">{{order.Delivery.date}}</label>
+    <div id="userLastNameHelp" class="form-text"></div>
+  </div>
+  <div class="form-floating mb-3">
+    <input name="builddate" type="datetime-local" class="form-control" id="builddate" value="{{order.Assembly.date}}">
+  <label for="builddate" class="form-label">{{order.Assembly.date}}</label>
+    <div id="userLastNameHelp" class="form-text"></div>
+  </div>
+  <div class="form-floating mb-3">
+    <select name="deliveryteam" class="form-select" id="floatingSelect" aria-label="Floating label select example" >
+      <option value={{order.Delivery.groupDelivery_id}}>{{order.Delivery.groupDelivery_id}}</option>
+      <option value="1">Бригада 1</option>
+      <option value="2">Бригада 2</option>
+      <option value="3">Бригада 3</option>
+    </select>
+    <label for="floatingSelect">Бригада доставки {{order.Delivery.groupDelivery_id}}</label>
+  </div>
+  <div class="form-floating mb-3">
+    <select name="buildteam" class="form-select" id="floatingSelect" aria-label="Floating label select example" >
+      <option value={{order.Assembly.groupAssembly_id}}>{{order.Assembly.groupAssembly_id}}</option>
+      <option value="1">Бригада 1</option>
+      <option value="2">Бригада 2</option>
+      <option value="3">Бригада 3</option>
+    </select>
+    <label for="floatingSelect">Бригада сборки {{order.Assembly.groupAssembly_id}}</label>
+  </div>
+    <div class="form-floating mb-3">
+    <select name="status" class="form-select" id="floatingSelect" aria-label="Floating label select example">
+      <option value={{order.Status.type}}>{{order.Status.type}}</option>
+      <option value="1">в работе</option>
+      <option value="2">ожидание поствки</option>
+      <option value="3">доставлен</option>
+      <option value="4">собран</option>
+      <option value="5">рекламация</option>
+    </select>
+    <label for="floatingSelect"></label>
+  </div>
+  <div class="form-floating mb-3">
+    <input name="clientAdress" type="text " class="form-control" id="clientAdress" value="{{order.Client.adress}}">
+    <label for="clientAdress" class="form-label">{{order.Client.adress}}</label>
+    <div id="helpclientPhone" class="form-text"></div>
+  </div>
+  <div class="form-floating mb-3">
+    <input name="clientPhone" type="text " class="form-control" id="clientPhone" value={{order.Client.telephone}}>
+    <label for="clientPhone" class="form-label">{{order.Client.telephone}}</label>
+    <div id="helpclientPhone" class="form-text"></div>
+  </div>
+  <button type="submit" class="btn btn-primary">Сохранить</button>
+</form>
+</div>
 

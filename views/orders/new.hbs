@@ -1,5 +1,6 @@
-<h3 class="text-center">Создать заказ</h2>
-<form method="POST" action="/orders/new" class="col-6 m-auto">
+<div class="justify-content-center col-6 shadow-lg p-3 mb-5 mt-5 m-auto bg-body rounded">
+<h3 class="text-center pt-3">Создать заказ</h3>
+<form method="POST" action="/orders/new" class="p-3">
   <div class="form-floating mb-3">
     <input name="orderNumber" type="text " class="form-control" id="orderNumber">
     <label for="orderNumber" class="form-label">Номер заказа</label>
@@ -47,11 +48,7 @@
     <textarea name="comment" class="form-control" placeholder="Leave a comment here" id="comment"></textarea>
     <label for="comment">Комментарии клиента</label>
   </div>
-  <div class="form-floating mb-3">
-    <input name="author" type="text " class="form-control" id="author">
-    <label for="author" class="form-label">Введите Ваше имя</label>
-    <div id="helpauthor" class="form-text"></div>
-  </div>
 
-  <button type="submit" class="btn btn-primary">Создать заявку</button>
+  <button type="submit" class="btn btn-primary mb-3 mt-3">Создать заявку</button>
 </form>
+</div>
