@@ -1,4 +1,5 @@
 const router = require('express').Router();
+const bcrypt = require('bcrypt');
 const { User, GroupDelivery, GroupAssembly } = require('../../db/models');
 
 router
@@ -7,31 +8,36 @@ router
     res.render('users/users');
   });
 
-          
-  router
+router
   .route('/regusers')
   .get((req, res) => {
-    res.render('users/registrate')
+    res.render('users/registrate');
   })
   .post(async (req, res) => {
-    const { name, password, email, role } = req.body;
-    await User.create({ name, password, email, role })
-    res.render('users/registrated')
+    const {
+      name, password, email, role,
+    } = req.body;
+    const cryptPass = await bcrypt.hash(password, 10);
+    await User.create({
+      name, password: cryptPass, email, role,
+    });
+    res.render('users/registrated');
   });
-  
-  router
+
+router
   .route('/allusers')
   .get(async (req, res) => {
-    const allUser = await User.findAll({ 
+    const allUser = await User.findAll({
       order: [
-        ['id']
-      ] });
+        ['id'],
+      ],
+    });
     res.render('users/allusers', { allUser });
   });
 
-  router
+router
   .route('/groupdel')
-  .get( async (req, res) => {
+  .get(async (req, res) => {
     const allGroupDel = await GroupDelivery.findAll();
     let manyUsers = [];
       for (let i = 0; i < allGroupDel.length; i++) {
@@ -49,7 +55,7 @@ router
  
   router
   .route('/groupass')
-  .get( async (req, res) => {
+  .get(async (req, res) => {
     const allGroupAss = await GroupAssembly.findAll();
     let manyUsers = [];
       for (let i = 0; i < allGroupAss.length; i++) {
