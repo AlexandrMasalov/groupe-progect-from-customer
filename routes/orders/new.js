@@ -10,12 +10,19 @@ router.get('/', (req, res) => {
 
 router.post('/', async (req, res) => {
   const {
-    orderNumber, furniture, cost, delivery, builddate, deliveryteam, buildteam, clientPhone, comment,
+    orderNumber,
+    furniture,
+    delivery,
+    builddate,
+    deliveryteam,
+    buildteam,
+    clientPhone,
+    comment,
   } = req.body;
   // console.log(Date.parse(delivery),'555555555555');
   // console.log(new Date (delivery),'77777777777777');
 
-  console.log('req.body', req.body);
+  console.log('req.body>>>>>>>>>>', req.body);
 
   // создание доставки
   const newDelivery = await Delivery.create({

@@ -4,7 +4,7 @@ const { User } = require('../db/models');
 router
   .route('/')
   .get((req, res) => {
-    res.render('login');
+    res.render('login2');
   })
   .post(async (req, res) => {
     const { name, password } = req.body;
