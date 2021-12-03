@@ -20,10 +20,10 @@ router
           telephone: phone,
         });
         res.redirect('/orders');
-      }
+      } else { throw new Error(); }
     } catch (error) {
       res.render('error', {
-        message: 'Данный пользователь не зарегистрирован',
+        message: 'Необходимо заполнить все поля',
         error: {},
       });
     }

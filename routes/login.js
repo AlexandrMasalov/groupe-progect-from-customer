@@ -15,11 +15,11 @@ router
         if (user) {
           req.session.user = name;
           res.redirect('/orders');
-        }
+        } else { throw new Error(); }
       } catch (error) {
         console.log(123123);
         res.render('error', {
-          message: 'Данный пользователь не зарегистрирован',
+          message: 'Опять копытом по кнопкам промахнулся хех',
           error: {},
         });
       }

@@ -53,7 +53,7 @@ function isLogin(req, res, next) {
   next();
 }
 
-app.use('/', isLogin, mainRouter); // ссылка на роуты
+app.use('/', mainRouter); // ссылка на роуты
 app.use('/login', loginRouter);
 app.use('/logout', isLogin, logoutRouter);
 app.use('/orders', isLogin, ordersRouter);
