@@ -13,12 +13,12 @@
     </thead>
     <tbody>
 
-      {{#each allGroupAss}}
-      <tr data-orderId={{this.id}} class="pe-auto">
+      {{#each manyUsers }}
+      <tr data-orderId="{{this.id}}" class="pe-auto">
         <td scope="row">{{this.id}}</td>
         <td>{{this.user_id}}</td>
         <td>{{this.user2_id}}</td>        
-        <td>{{this.user3_id}}</td>         
+        <td>{{this.user3_id}}</td>        
       </tr>
       {{/each}}
       
