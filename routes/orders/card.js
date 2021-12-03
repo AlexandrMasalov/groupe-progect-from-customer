@@ -33,7 +33,6 @@ router
     await Order.update(
       {
         number: orderNumber,
-        body: req.body.body,
       },
       { where: { id } },
     );
