@@ -1,6 +1,6 @@
 <div class="wrapper m-5 mt-0 shadow-lg p-5 pt-5 bg-body rounded">
   <div class="d-flex justify-content-end">
-    <a href="/users/groupdel" type="button" class="btn btn-outline-primary mb-3 ml-2">Добавить бригаду</a>
+    <a href="/users/groupdeladd" type="button" class="btn btn-outline-primary mb-3 ml-2">Добавить бригаду</a>
   </div>
   <table class="table table-hover table-ligth table-orders">
     <thead>
@@ -13,8 +13,8 @@
     </thead>
     <tbody>
 
-      {{#each allGroupDel}}
-      <tr data-orderId={{this.id}} class="pe-auto">
+      {{#each manyUsers }}
+      <tr data-orderId="{{this.id}}" class="pe-auto">
         <td scope="row">{{this.id}}</td>
         <td>{{this.user_id}}</td>
         <td>{{this.user2_id}}</td>        
