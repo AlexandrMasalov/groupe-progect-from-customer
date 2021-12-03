@@ -10,10 +10,37 @@ router.get('/:id', async (req, res) => {
   res.json({ order, newDate });
 });
 
-router.get('/:id/edit', async (req, res) => {
-  const order = await Order.findOne({ include: { all: true }, where: { id: req.params.id } });
-  console.log('order>>>>>>>>>>>>>', order);
-  res.render('orders/card', { order });
-});
+router
+  .route('/:id/edit')
+  .get(async (req, res) => {
+    const order = await Order.findOne({ include: { all: true }, where: { id: req.params.id } });
+    res.render('orders/card', { order });
+  })
+  .post(async (req, res) => {
+    const { id } = req.params;
+    const {
+      orderNumber,
+      furniture,
+      delivery,
+      builddate,
+      deliveryteam,
+      buildteam,
+      status,
+      clientAdress,
+      clientPhone,
+    } = req.body;
+    const order = await Order.findOne({ include: { all: true }, where: { id } });
+    await Order.update(
+      {
+        number: orderNumber,
+        body: req.body.body,
+      },
+      { where: { id } },
+    );
+    console.log('order>>>>>>>>>>>>>', order.Status.type);
+    console.log('body>>>>>>>>>>>>>', req.body);
+
+    res.redirect('/orders');
+  });
 
 module.exports = router;

@@ -1,6 +1,6 @@
-<div class="col-6 m-5 mt-0 shadow-lg p-5 pt-5 bg-body rounded">
+<div class="col-6 m-5 mt-0 m-auto shadow-lg p-5 pt-5 bg-body rounded">
 <h3 data-orderId={{order.id}} class="text-center">Редактировать заказ</h2>
-<form method="POST" action="/orders/new">
+<form data-edit="card-order" method="POST" action="/orders/card/{{order.id}}/edit">
   <div class="form-floating mb-3">
     <input name="orderNumber" type="text " class="form-control" id="orderNumber" value={{order.number}}>
     <label for="orderNumber" class="form-label"></label>
@@ -51,8 +51,8 @@
     <label for="floatingSelect"></label>
   </div>
   <div class="form-floating mb-3">
-    <input name="clientPhone" type="text " class="form-control" id="clientPhone" value={{order.Client.adress}}>
-    <label for="clientPhone" class="form-label"></label>
+    <input name="clientAdress" type="text " class="form-control" id="clientAdress" value={{order.Client.adress}}>
+    <label for="clientAdress" class="form-label"></label>
     <div id="helpclientPhone" class="form-text"></div>
   </div>
   <div class="form-floating mb-3">

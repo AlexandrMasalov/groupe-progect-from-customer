@@ -3,36 +3,36 @@ const $wrapper = document.querySelector('.wrapper');
 
 function renderComment(comment) {
   return `
-      <figure class="mt-2">
-        <figcaption class="blockquote-footer mb-0">
-          <cite title="Source Title">${comment.author}</cite>
-        </figcaption>
-        <blockquote class="blockquote">
-          <p>${comment.body}</p>
-        </blockquote>
-      </figure> 
-    `;
+    <figure class="mt-2">
+      <figcaption class="blockquote-footer mb-0">
+        <cite title="Source Title">${comment.author}</cite>
+      </figcaption>
+      <blockquote class="blockquote">
+        <p>${comment.body}</p>
+      </blockquote>
+    </figure> 
+  `;
 }
 
 function renderCardOrder(order) {
   return `
     <div data-orderid=${order.id} class="col-10 m-5 mt-0 m-auto shadow-lg p-5 pt-5 bg-body rounded">
       <h3 class="text-center">Заказ №${order.number}</h3>
-      <a href="/orders/card/${order.id}/edit" class="btn btn-danger mb-3">Редактировать</a>
+      <a href="/orders/card/${order.id}/edit" class="btn btn-primary mb-3">Редактировать</a>
       <ul data-clientid=${order.Client.id} class="list-group list-group-flush">
-        <li class="list-group-item list-group-item-action list-group-item-secondary mb-2">Тип мебели: <span class="p-3 fw-bolder"> ${order.Furniture.type}<span></li>
-        <li class="list-group-item list-group-item-action list-group-item-secondary mb-2">Цена: <span class="p-3 fw-bolder">${order.Furniture.price}<span></li>
-        <li class="list-group-item list-group-item-action list-group-item-secondary mb-2">Стоимость доствки: <span class="p-3 fw-bolder">${Math.floor(order.Furniture.price * 0.05)}<span></li>
-        <li class="list-group-item list-group-item-action list-group-item-secondary mb-2">Стоимость сборки: <span class="p-3 fw-bolder">${Math.floor(order.Furniture.price * 0.07)}<span></li>
-        <li class="list-group-item list-group-item-action list-group-item-secondary mb-2">Дата доставки: <span class="p-3 fw-bolder">${order.Delivery.date}<span></li>
-        <li class="list-group-item list-group-item-action list-group-item-secondary mb-2">Дата сборки:<span class="p-3 fw-bolder"> ${order.Assembly.date}<span></li>
-        <li class="list-group-item list-group-item-action list-group-item-secondary mb-2">Бригада доствки: <span class="p-3 fw-bolder">${order.Delivery.groupDelivery_id}<span></li>
-        <li class="list-group-item list-group-item-action list-group-item-secondary mb-2">Бригада сборки:<span class="p-3 fw-bolder"> ${order.Assembly.groupAssembly_id}<span></li>
-        <li class="list-group-item list-group-item-action list-group-item-secondary mb-2">Клиент: <span class="p-3 fw-bolder">${order.Client.name} ${order.Client.lastName}<span></li>
-        <li class="list-group-item list-group-item-action list-group-item-secondary mb-2">Телефон клиента: <span class="p-3 fw-bolder"> ${order.Client.telephone}<span></li>
-        <li class="list-group-item list-group-item-action list-group-item-secondary mb-2">Адресс доставки: <span class="p-3 fw-bolder">${order.Client.adress}<span></li>
-        <li class="list-group-item list-group-item-action list-group-item-secondary mb-2">Статус: <span class="p-3 fw-bolder"> ${order.Status.type}<span></li>
-        <li class="list-group-item list-group-item-action list-group-item-secondary mb-2 comment">
+        <li class="list-group-item list-group-item-action mb-2">Тип мебели: <span class="p-3 fw-bolder"> ${order.Furniture.type}<span></li>
+        <li class="list-group-item list-group-item-action mb-2">Цена: <span class="p-3 fw-bolder">${order.Furniture.price}<span></li>
+        <li class="list-group-item list-group-item-action mb-2">Стоимость доствки: <span class="p-3 fw-bolder">${Math.floor(order.Furniture.price * 0.05)}<span></li>
+        <li class="list-group-item list-group-item-action mb-2">Стоимость сборки: <span class="p-3 fw-bolder">${Math.floor(order.Furniture.price * 0.07)}<span></li>
+        <li class="list-group-item list-group-item-action mb-2">Дата доставки: <span class="p-3 fw-bolder">${order.Delivery.date}<span></li>
+        <li class="list-group-item list-group-item-action mb-2">Дата сборки:<span class="p-3 fw-bolder"> ${order.Assembly.date}<span></li>
+        <li class="list-group-item list-group-item-action mb-2">Бригада доствки: <span class="p-3 fw-bolder">${order.Delivery.groupDelivery_id}<span></li>
+        <li class="list-group-item list-group-item-action mb-2">Бригада сборки:<span class="p-3 fw-bolder"> ${order.Assembly.groupAssembly_id}<span></li>
+        <li class="list-group-item list-group-item-action mb-2">Клиент: <span class="p-3 fw-bolder">${order.Client.name} ${order.Client.lastName}<span></li>
+        <li class="list-group-item list-group-item-action mb-2">Телефон клиента: <span class="p-3 fw-bolder"> ${order.Client.telephone}<span></li>
+        <li class="list-group-item list-group-item-action mb-2">Адресс доставки: <span class="p-3 fw-bolder">${order.Client.adress}<span></li>
+        <li class="list-group-item list-group-item-action mb-2">Статус: <span class="p-3 fw-bolder"> ${order.Status.type}<span></li>
+        <li class="list-group-item list-group-item-action mb-2 comment">
         <div class="d-flex justify-content-between">
           <p>Комментарии:</p>
           <button data-add="comment" type="button" class="btn btn-primary">+</button>
@@ -51,8 +51,8 @@ function renderCardClient(client) {
   <div class="col-6 m-auto">
     <h3 class="text-center">Клиент ${client.name} ${client.lastName}</h3>
     <ul class="list-group list-group-flush">
-      <li class="list-group-item list-group-item-action list-group-item-secondary mb-2">Телефон клиента: <span class="p-3 fw-bolder"> ${client.telephone}<span></li>
-      <li class="list-group-item list-group-item-action list-group-item-secondary mb-2">Адресс доставки: <span class="p-3 fw-bolder">${client.adress}<span></li>
+      <li class="list-group-item list-group-item-action mb-2">Телефон клиента: <span class="p-3 fw-bolder"> ${client.telephone}<span></li>
+      <li class="list-group-item list-group-item-action mb-2">Адресс доставки: <span class="p-3 fw-bolder">${client.adress}<span></li>
     </ul>   
   </div>
   `;
@@ -64,6 +64,23 @@ function button() {
   <div class="col-6 m-auto">
     <a class="btn btn-primary col-12" href="/clients" role="button">Назад</a>
   </div>
+  `;
+}
+
+function collapseOrders(order) {
+  return `
+  <div class="accordion col-6 m-auto mb-2" id="accordionFlush">
+    <div class="accordion-item">
+    <h2 class="accordion-header" id="flush-headingOne">
+      <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapseOne" aria-expanded="false" aria-controls="flush-collapseOne">
+        Заказ № ${order.number}
+      </button>
+    </h2>
+    <div id="flush-collapseOne" class="accordion-collapse collapse" aria-labelledby="flush-headingOne" data-bs-parent="#accordionFlushExample">
+      ${renderCardOrder(order)}
+    </div>
+  </div>
+</div>
   `;
 }
 
@@ -111,7 +128,7 @@ $tableClients?.addEventListener('dblclick', async (e) => {
       $wrapper.insertAdjacentHTML('afterbegin', renderCardClient(client));
       orders.forEach((order) => {
         // const newDate = dayjs(order.Delivery.dataValues.date).format('YY-MM-DD HH:mm');
-        $wrapper.insertAdjacentHTML('beforeend', renderCardOrder(order));
+        $wrapper.insertAdjacentHTML('beforeend', collapseOrders(order));
       });
       $wrapper.insertAdjacentHTML('beforeend', button());
     }
