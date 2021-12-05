@@ -1,7 +1,8 @@
 const app = require('./app');
 
+const PORT = process.env.PORT || 3000;
 function connctToServer() {
-  app.listen(3000, () => console.log('Connect to server'));
+  app.listen(PORT, () => console.log('Connect to server'));
 }
 
 connctToServer();

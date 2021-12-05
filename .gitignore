@@ -117,3 +117,6 @@ config/config.js
 .yarn/build-state.yml
 .yarn/install-state.gz
 .pnp.*
+
+
+.command.md
