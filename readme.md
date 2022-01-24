@@ -16,5 +16,6 @@
 - Express;
 - SQL;
 - PostgeSQL;
+- Sequelize;
 - Handlebars;
 - Ajax.
